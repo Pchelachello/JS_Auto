@@ -1,22 +1,19 @@
 import superagent from "superagent";
 import Response from "superagent/lib/node/response";
-import { myComment } from "../const/consts";
+import { commentLink, myComment, reqCommentLink } from "../const/consts";
 
-describe("User tests", () => {
-  const BASE_URL = "https://jsonplaceholder.typicode.com";
-  const postLink = `${BASE_URL}/comments`;
-  const commentLink = `${postLink}/1`;
+describe("Comments tests", () => {
   let response: Response;
 
   it("Получение всех комментариев", async () => {
-    response = await superagent.get(`${postLink}`);
+    response = await superagent.get(`${reqCommentLink}`);
 
     expect(response.body).not.toBeNull();
     expect(response.status).toBe(200);
   });
 
   it("Получение названия комментария по postId и id", async () => {
-    response = await superagent.get(`${postLink}`).query({ postId: 1, id: 1 });
+    response = await superagent.get(`${reqCommentLink}`).query({ postId: 1, id: 1 });
 
     response.body.forEach((item: { name: String }) => {
       expect(item.name).toBe("id labore ex et quam laborum");
@@ -25,10 +22,9 @@ describe("User tests", () => {
   });
 
   it("Добавление нового комментария", async () => {
-    response = await superagent.post(`${postLink}`).send(myComment);
+    response = await superagent.post(`${reqCommentLink}`).send(myComment);
     expect(response.status).toBe(201);
     expect(response.body.id).toBe(501);
-    console.log(response.body);
     expect(response.body).toHaveProperty("id");
     expect(response.body).toHaveProperty("name");
     expect(response.body).toHaveProperty("email");
@@ -52,7 +48,7 @@ describe("User tests", () => {
 
   it("Ошибка при поиске комментария", async () => {
     try {
-      response = await superagent.get(`${postLink}/4004`);
+      response = await superagent.get(`${reqCommentLink}/4004`);
     } catch (err: any) {
       console.log("Something went wrong");
     }
