@@ -5,7 +5,7 @@ describe("Frontend tests", () => {
 
   let driver: WebDriver;
   beforeAll(async () => {
-    driver = await new Builder().forBrowser("chrome").build();
+    driver = await new Builder().forBrowser('MicrosoftEdge').build();
     await driver.manage().window().maximize();
     await driver.get("https://google.com");
   }, 70 * SECONDS);

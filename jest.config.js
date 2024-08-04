@@ -1,5 +1,5 @@
 module.exports = {
     preset: "ts-jest",
     testEnvironment: "node",
-    testMatch: ["**/Front/*.spec.ts"]
+    testMatch: ["**/Selenium/*.spec.ts"]
 }

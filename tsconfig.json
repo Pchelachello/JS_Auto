@@ -2,7 +2,6 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "types": ["@types/node",
-    "@types/chai",
     "@types/jest"],
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
