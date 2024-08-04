@@ -4,25 +4,23 @@
   "description": "��#\u0000 \u0000J\u0000S\u0000_\u0000A\u0000u\u0000t\u0000o\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "testmocha": "mocha",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/chai": "^4.3.16",
+    "@faker-js/faker": "^8.4.1",
     "@types/jest": "^29.5.12",
-    "@types/mocha": "^10.0.7",
     "@types/node": "^20.14.9",
     "@types/selenium-webdriver": "^4.1.24",
     "@types/superagent": "^8.1.7",
-    "chai": "^5.1.1",
     "chromedriver": "^126.0.4",
-    "mocha": "^10.6.0",
+    "puppeteer": "^22.13.1",
     "selenium-webdriver": "^4.22.0",
     "superagent": "^9.0.2",
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "uninstall": "^0.0.0"
   }
 }
